@@ -1,0 +1,210 @@
+title: rapport de l'estimation analytique des coefficients pour l'algo de recommandation selon les données utilisateurs
+
+
+INPUTS:
+
+
+spatial_diff : différence spatiale entre le lieu de la requête d'un utilisateur et le lieu de l'activité (distance euclidiennne par rapport aux coordonnées lat/long)
+duration_diff : durée de l'évènement (fin-début ou moment de la requête en jours) 
+occurence : nombre de fois que l'évènement est proposé
+time_diff: différence en temps (jours) entre le début de l'activité et la requête
+
+Étude réalisée sur 19,890 couples (activités cliquées, requête du même utilisateur) les plus récents
+
+Les quatres variables ont été préprocessées en appliquant la formule magique de mapado: f(x)=exp(GoldenNumber * x) avec GoldenNumber=-0.0124077324 puis scalés pour etre mis à la même échelle.
+pour spatial_diff, même cette formule est équivalente à celle utilisée par ElasticSearch => donc même ordre de grandeur
+L'intérêt d'une telle transformation est de donné du poids à des petites valeurs => par exemple une petite distance indique à priori un faible biais et est donc pondéré.
+
+MODELE:
+
+hypothèse: plus une personne va scroller avant de cliquer plus elle va dépenser d'effort et donc plus sont choix sera vraisemblablement moins biaisé par rapport à ses attentes par rapport à un choix en top du scroll qui peut soit correspondre à ses attentes ou soit  être un choix par "défault".
+
+L'importance des coeffs à utiliser est donc une fonction de la position:  Position = f(spatial_diff,duration_diff,occurence,time_diff)
+Deux modèles utilisés:
+
+Regression: Position = a*spatial_diff + b*duration_diff + c*occurence + d*time_diff + intercept
+Classification: Position > seuil = f(a*spatial_diff,b*duration_diff,c*occurence,d*time_diff)
+
+
+REGRESSION:
+
+Régression Linéaire simple (OLS): Résultat:
+
+
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.034
+Model:                            OLS   Adj. R-squared:                  0.034
+Method:                 Least Squares   F-statistic:                     176.0
+Date:                Tue, 06 Jan 2015   Prob (F-statistic):          1.98e-148
+Time:                        09:02:28   Log-Likelihood:            -1.0886e+05
+No. Observations:               19890   AIC:                         2.177e+05
+Df Residuals:                   19885   BIC:                         2.178e+05
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P>|t|      [95.0% Conf. Int.]
+---------------------------------------------------------------------------------
+intercept        22.6909      0.409     55.518      0.000        21.890    23.492
+spatial_diff      3.3654      0.409      8.227      0.000         2.564     4.167
+duration_diff    -1.8407      0.567     -3.246      0.001        -2.952    -0.729
+occurence        -4.3553      0.565     -7.710      0.000        -5.463    -3.248
+time_diff        -9.8910      0.419    -23.616      0.000       -10.712    -9.070
+=================================================================================
+
+
+ps: intercept = coef b0 (sans importance=> donne la moyenne de la position)
+
+interpretation:
+- Le modèle est très mal corrélé=> cf R² (normal) mais significatif (il existe néanmoins un corrélation cf Prob F-stat)
+- Toutes les variables sont significatifs (cf Pvalue: P>|t|) ce qui est assez étonnant
+- Seul spatial_diff "pousse" les valeurs vers des positions élevées (seul coeff positif) les autres coefs  sont négatifs et ont tendance à faire baisser la valeur de Position
+
+regression par foret d'arbres de décision:
+
+Méthode intéressante car non linéaire et permet d'avoir une estimation "brute" de l'importance des coeffs dans la régression ainsi que  accès à l'erreur de type cross-val:
+
+importance absolue des coeffs:
+('spatial_diff', 0.37789957412650871)
+('duration_diff', 0.20849533212614288)
+('occurence', 0.18840892353730368)
+('time_diff', 0.22519617021004534)
+
+oob_score: 0.85 (témoigne d'un surprenante capacité du modèle à prédire plus ou moins le Position)
+
+CLASSIFICATION:
+
+le seuil est fixé à 30 => on crée ainsi deux catégories les positions des activités cliquées en dessous/au dessus de 30 (qui représente un effort de scroll tout de même significatif) 
+
+
+Régression logistique:
+
+score (du jeu de données utilisées pour le fitting lors de l'évaluation): 0.847611865259
+Ce score témoigne de la capacité surprenante du modèle à classer correctement 84 % des couples de clicked/requête utilisées pour entrainer le modèle dans la bonne catégorie. Même si c'est overfitté, c'est quand même assez surprenant: je m'attendais plus à qqch de l'ordre de 0.60
+
+coef:
+
+=================================================================================
+                    coef    std err          z      P>|z|      [95.0% Conf. Int.]
+---------------------------------------------------------------------------------
+intercept        -1.8070      0.021    -84.984      0.000        -1.849    -1.765
+spatial_diff      0.3801      0.035     10.975      0.000         0.312     0.448
+duration_diff    -0.1764      0.026     -6.790      0.000        -0.227    -0.126
+occurence        -0.1027      0.025     -4.037      0.000        -0.153    -0.053
+time_diff        -0.3583      0.018    -20.080      0.000        -0.393    -0.323
+=================================================================================
+
+Encore une fois: seul spatial_diff "pousse" les couples à se classer dans la classe Position>30
+
+Classification par forêt d'arbre:
+
+score: 0.998994469583
+oob score: 0.951583710407
+
+importance absolue des variables:
+
+('spatial_diff', 0.46487811523900746)
+('duration_diff', 0.16667364880045099)
+('occurence', 0.15314353374828635)
+('time_diff', 0.21530470221225551)
+
+Il est impressionant de réaliser que en utilisant un modèle plus puissant, on peut prédire avec 95% de succès la classe des couples clicked/requête avec seulement les quatres variables spatial_diff,duration_diff,occurence et time_diff.
+
+
+CONCLUSION
+
+Les différentes analyses font resortir une seule tendance: les couples clicked/requête avec une position élevée ont significativement une faible spatial_diff ce qui montre que le modèle de reco utilisée ne pondère pas assez cette variable pour etre en harmonie avec le comportement des utilisateurs!
+
+L'influence des trois autres variables est caractéristique de faible Position ce qui témoigne que le choix des utilisateurs en fonction de celles-ci est soit influencé par la position naturelle des activités proposées par le modèle de reco actuelle soit témoigne du fait que les utilisateurs vont choisir des activités avec des occurence, time_diff et duration_diff élevée après avoir scrollés beaucoup montrant que si ils scrollent ces paramètres ne sont plus importants pour eux.
+
+Pour avoir une formule magique:
+- on doit tout d'abord pondéré d'avantage spatial_diff de l'ordre de 40 à 50% (*1.5)
+- on peut aussi dépondéré occurence, time_diff et duration_diff (de l'ordre de 0.16 0.15 et 0.20 % respectivement) même si cela a été calculé en fonction des données utilisateurs et n'est pas forcement un choix rationnel (c'est vrai qu'il est plus logique de favoriser les événements peu occurents même si les utilisateurs ne se comportent pas de cette facon)
+
+Au final on peut conclure que ce qui compte vraiement (en plus de pondérer spatial_diff) pour le système de reco c'est la pertinence des activités d'un point de vue contenue ce qui n'a pas été pris en compte ici. Pour améliorer le système de reco il faut donc améliorer la pertinence du choix des activités d'un point de vue thématique.
+
+
+
+
+
+
+
+####################  REPORT #############
+
+
+                           OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.034
+Model:                            OLS   Adj. R-squared:                  0.034
+Method:                 Least Squares   F-statistic:                     176.0
+Date:                Tue, 06 Jan 2015   Prob (F-statistic):          1.98e-148
+Time:                        09:02:28   Log-Likelihood:            -1.0886e+05
+No. Observations:               19890   AIC:                         2.177e+05
+Df Residuals:                   19885   BIC:                         2.178e+05
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P>|t|      [95.0% Conf. Int.]
+---------------------------------------------------------------------------------
+intercept        22.6909      0.409     55.518      0.000        21.890    23.492
+spatial_diff      3.3654      0.409      8.227      0.000         2.564     4.167
+duration_diff    -1.8407      0.567     -3.246      0.001        -2.952    -0.729
+occurence        -4.3553      0.565     -7.710      0.000        -5.463    -3.248
+time_diff        -9.8910      0.419    -23.616      0.000       -10.712    -9.070
+==============================================================================
+Omnibus:                    23934.399   Durbin-Watson:                   0.490
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          2757388.176
+Skew:                           6.570   Prob(JB):                         0.00
+Kurtosis:                      59.165   Cond. No.                         2.40
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:                      y   No. Observations:                19890
+Model:                            GLM   Df Residuals:                    19885
+Model Family:                Binomial   Df Model:                            4
+Link Function:                  logit   Scale:                             1.0
+Method:                          IRLS   Log-Likelihood:                -8166.7
+Date:                Tue, 06 Jan 2015   Deviance:                       16333.
+Time:                        09:02:31   Pearson chi2:                 1.96e+04
+No. Iterations:                     8                                         
+=================================================================================
+                    coef    std err          z      P>|z|      [95.0% Conf. Int.]
+---------------------------------------------------------------------------------
+intercept        -1.8070      0.021    -84.984      0.000        -1.849    -1.765
+spatial_diff      0.3801      0.035     10.975      0.000         0.312     0.448
+duration_diff    -0.1764      0.026     -6.790      0.000        -0.227    -0.126
+occurence        -0.1027      0.025     -4.037      0.000        -0.153    -0.053
+time_diff        -0.3583      0.018    -20.080      0.000        -0.393    -0.323
+=================================================================================
+
+#### go log fiting ####
+done in :0.0198979377747 s
+score: 0.847611865259
+('spatial_diff', 0.37928779580626854)
+('duration_diff', -0.17624725030866706)
+('occurence', -0.10269721713579756)
+('time_diff', -0.35796394856932318)
+
+
+#### go ExtraTree Classifier fiting ####
+done in :40.118696928 s
+score: 0.998994469583
+oob score: 0.951583710407
+('spatial_diff', 0.46487811523900746)
+('duration_diff', 0.16667364880045099)
+('occurence', 0.15314353374828635)
+('time_diff', 0.21530470221225551)
+
+#### go ExtraTree Regressor fiting ####
+done in :78.4138741493 s
+score: -28366.5085976
+oob score: 0.829171633961
+('spatial_diff', 0.37789957412650871)
+('duration_diff', 0.20849533212614288)
+('occurence', 0.18840892353730368)
+('time_diff', 0.22519617021004534)
+
+

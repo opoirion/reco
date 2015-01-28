@@ -1,0 +1,1014 @@
+{
+  "took" : 52,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 192922,
+    "max_score" : null,
+    "hits" : [ {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "xjHrWAzEThK-Nue8pQ4EgQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:14:01.968Z" ]
+      },
+      "sort" : [ 1412781241968, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "XmuUiOacQlu-coiTwfXNiw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:14:06.378Z" ]
+      },
+      "sort" : [ 1412781246378, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "3iM4anN8TTicvyaBW8hjrw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:14:13.618Z" ]
+      },
+      "sort" : [ 1412781253618, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "kEneqg-1RaicVJxz9of_Xw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:15:38.277Z" ]
+      },
+      "sort" : [ 1412781338277, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "T9Y8_c0FSDajYcwWQ1paYQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:15:48.219Z" ]
+      },
+      "sort" : [ 1412781348219, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "HzZLDT5DQfirxeHbUctacw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:16:28.299Z" ]
+      },
+      "sort" : [ 1412781388299, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "GNdmP9dcRiGlMftPIw_2Aw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:18:10.777Z" ]
+      },
+      "sort" : [ 1412781490777, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "wg0jEnH4SsuM3gF-6V9z0g",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:18:15.867Z" ]
+      },
+      "sort" : [ 1412781495867, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "VCA33KofReuP6zzsqSVE_A",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:19:37.804Z" ]
+      },
+      "sort" : [ 1412781577804, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "0vDGasjbQtqP-BJqpnsieQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:21:16.397Z" ]
+      },
+      "sort" : [ 1412781676397, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "czC03p9OSaiD8dvtE4hi2Q",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:22:17.536Z" ]
+      },
+      "sort" : [ 1412781737536, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "0VQrim44Q0qNl3I-_FwvWA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:22:32.877Z" ]
+      },
+      "sort" : [ 1412781752877, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "AqUL1qr1Rn-A0HYtKsDbrA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:22:39.985Z" ]
+      },
+      "sort" : [ 1412781759985, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "mDuq18XFSS6k2I7IVYpS7Q",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:23:08.011Z" ]
+      },
+      "sort" : [ 1412781788011, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "fT8KO8QuRXqAy9PEp3TLfg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:23:26.882Z" ]
+      },
+      "sort" : [ 1412781806882, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "ILBXyyBUT8CWiDbC1mN-Uw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:23:32.976Z" ]
+      },
+      "sort" : [ 1412781812976, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "KXAGlR8ZQ7WkjlxFN4ockg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:24:46.060Z" ]
+      },
+      "sort" : [ 1412781886060, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "ptDr3TisSJWGA2MyAVHDeA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:25:00.071Z" ]
+      },
+      "sort" : [ 1412781900071, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "E3ZD5JBfSg2fU54LUbESeg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:25:12.488Z" ]
+      },
+      "sort" : [ 1412781912488, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "7w6R-Q-uSZeet-3-FaDc9A",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:25:18.357Z" ]
+      },
+      "sort" : [ 1412781918357, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "ULtRkMHMRHK7r5CEUcNSIg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:27:52.605Z" ]
+      },
+      "sort" : [ 1412782072605, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "8Jq--4RhReS3JNlkiPe2SA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "clicked" ],
+        "@timestamp" : [ "2014-10-08T15:28:48.865Z" ]
+      },
+      "sort" : [ 1412782128865, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "w_EzXsxdTNie1cwlXVskPg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:29:03.249Z" ]
+      },
+      "sort" : [ 1412782143249, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "eLH4ZLFHSUai8fM6xCotjg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:30:53.687Z" ]
+      },
+      "sort" : [ 1412782253687, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "mq8gL61_Rq-y9yi8iBaaIA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:30:54.857Z" ]
+      },
+      "sort" : [ 1412782254857, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "TvsdU1JgRVyS5WjiEUz3eQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:31:54.386Z" ]
+      },
+      "sort" : [ 1412782314386, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "gDRIi9vPQquic4rDHgUMQg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "clicked" ],
+        "@timestamp" : [ "2014-10-08T15:32:56.552Z" ]
+      },
+      "sort" : [ 1412782376552, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "FV1cup5MTRS8wLIOi7NxfQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:33:07.601Z" ]
+      },
+      "sort" : [ 1412782387601, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "_ndWWU_ySoG6i3oiJRbH-Q",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:34:06.309Z" ]
+      },
+      "sort" : [ 1412782446309, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "I2P5PIoDT5uMv2j7uXNLfA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:34:20.279Z" ]
+      },
+      "sort" : [ 1412782460279, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "04vQjeN9Q16itSPfogJiqQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "clicked" ],
+        "@timestamp" : [ "2014-10-08T15:34:41.668Z" ]
+      },
+      "sort" : [ 1412782481668, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "ndr47n-WRZeWOY7reiBsNA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:35:10.999Z" ]
+      },
+      "sort" : [ 1412782510999, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "kvDi3HoGQ0WEH9hwIn2N_Q",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:35:34.730Z" ]
+      },
+      "sort" : [ 1412782534730, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "Kf--CCGPRYKxXu4qnXKCSA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:35:50.684Z" ]
+      },
+      "sort" : [ 1412782550684, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "yqPZJIL1S1e6XWSXj_gwOA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:35:53.838Z" ]
+      },
+      "sort" : [ 1412782553838, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "vedQ7HGBRyylSQvTWvUmUw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:35:57.493Z" ]
+      },
+      "sort" : [ 1412782557493, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "J9_qwYakSbmBA36v1GI6Dw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:36:01.919Z" ]
+      },
+      "sort" : [ 1412782561919, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "ahdi89b-Ti6fyBzZ1JmFgQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:36:05.189Z" ]
+      },
+      "sort" : [ 1412782565189, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "e6g9wMuYRsu3JNrDJhiLEg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "clicked" ],
+        "@timestamp" : [ "2014-10-08T15:36:11.734Z" ]
+      },
+      "sort" : [ 1412782571734, "5435544c18a54" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "kBb5Spx4S5GTdXcHK1aUCA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:36:34.573Z" ]
+      },
+      "sort" : [ 1412782594573, null ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "M0Y6D1XGTrS_MQls0ELZUQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:36:39.420Z" ]
+      },
+      "sort" : [ 1412782599420, null ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "46PumLu0RaqaaubGyUMnQQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "clicked" ],
+        "@timestamp" : [ "2014-10-08T15:36:52.446Z" ]
+      },
+      "sort" : [ 1412782612446, null ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "gn308YblReOo49HIVWzLBQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:37:33.202Z" ]
+      },
+      "sort" : [ 1412782653202, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "sXwXLcFySV-AEKrDumJBOw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:37:40.761Z" ]
+      },
+      "sort" : [ 1412782660761, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "X1_8qy2wTKaRxoYdf9c9NA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:37:58.856Z" ]
+      },
+      "sort" : [ 1412782678856, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "fEf3OQkTTeS18ZVG4FdDWw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:38:55.321Z" ]
+      },
+      "sort" : [ 1412782735321, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "D6ROXAWEQRS7pvLTF4KxoQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:39:04.332Z" ]
+      },
+      "sort" : [ 1412782744332, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "yM-Kb_iFR8yt5Yd_eft6bw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:39:06.725Z" ]
+      },
+      "sort" : [ 1412782746725, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "bQ0R_ilATgObRWUFtaNjQA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:39:11.133Z" ]
+      },
+      "sort" : [ 1412782751133, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "jVEqZ52VTTqENMN3ElKnnA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:39:16.054Z" ]
+      },
+      "sort" : [ 1412782756054, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "nqyJ9gPRRzGQ19ZQgrDRYQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:39:20.509Z" ]
+      },
+      "sort" : [ 1412782760509, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "OufuUi0nSn-y5SkPzU9miQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:39:32.043Z" ]
+      },
+      "sort" : [ 1412782772043, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "84wdtwNITLiRfWXVoHoPPw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:40:02.032Z" ]
+      },
+      "sort" : [ 1412782802032, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "VKTBpJE6RUa3O0oegV_Dzw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:40:31.273Z" ]
+      },
+      "sort" : [ 1412782831273, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "H_cUQIawSm-UUAeLl3xzBA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:41:08.627Z" ]
+      },
+      "sort" : [ 1412782868627, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "PdHB69RnQtmBNgk8DWENow",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:41:26.200Z" ]
+      },
+      "sort" : [ 1412782886200, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "B-0hK0P9SzKwBXjuL1ayZg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:41:46.736Z" ]
+      },
+      "sort" : [ 1412782906736, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "Kn2olcpvTiOHJI_o1kQgTg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:41:54.648Z" ]
+      },
+      "sort" : [ 1412782914648, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "0Nvo8fpbStSrt6m7Kluhhw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:42:10.180Z" ]
+      },
+      "sort" : [ 1412782930180, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "4pkqJ-4bScyBrsg5hhj--g",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:42:53.930Z" ]
+      },
+      "sort" : [ 1412782973930, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "T6nA6r57RiKywIp5ooZDQQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:43:15.000Z" ]
+      },
+      "sort" : [ 1412782995000, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "l5ZquJ5bSgWyUL5aT0lfBQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:43:40.619Z" ]
+      },
+      "sort" : [ 1412783020619, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "3VeHbiPfQwuKjfvWnzzhtg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:43:52.415Z" ]
+      },
+      "sort" : [ 1412783032415, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "oHvZk9ndSfmFP1YwUQXB1A",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:43:59.798Z" ]
+      },
+      "sort" : [ 1412783039798, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "dccO6WPsSfySXyvkoYMz0A",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:44:35.736Z" ]
+      },
+      "sort" : [ 1412783075736, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "-Cg0GjCmTgKjT3gH6ddbuA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:44:37.771Z" ]
+      },
+      "sort" : [ 1412783077771, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "nb9cvpO6QROA9seFC6PrXQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:44:44.247Z" ]
+      },
+      "sort" : [ 1412783084247, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "xGFZCQfvSTya10FG3uTZUQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:44:49.704Z" ]
+      },
+      "sort" : [ 1412783089704, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "MGW0JKpaR_SMPAhDoJAKBQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:44:53.555Z" ]
+      },
+      "sort" : [ 1412783093555, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "6Kfhmk2URBe9kD-gL5hnsg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:44:57.213Z" ]
+      },
+      "sort" : [ 1412783097213, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "hHKd5fB8SX2QxTv5E4QtHg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:45:43.602Z" ]
+      },
+      "sort" : [ 1412783143602, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "H0eclVkDR-SA2uQQsn_2bA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:46:08.841Z" ]
+      },
+      "sort" : [ 1412783168841, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "JOegwg5MRfmWkX_pxWjPeQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:47:00.604Z" ]
+      },
+      "sort" : [ 1412783220604, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "UlY5AaC3QfqTLOmrNrcXNw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:47:27.106Z" ]
+      },
+      "sort" : [ 1412783247106, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "mkM9zUIqTGSkrEFkEezd_A",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:47:37.036Z" ]
+      },
+      "sort" : [ 1412783257036, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "_byQtIhVRfCdGVSLfLdTaw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:47:52.269Z" ]
+      },
+      "sort" : [ 1412783272269, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "7wxWqiykSYyCYtv7IYCiHw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:48:14.684Z" ]
+      },
+      "sort" : [ 1412783294684, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "7Me1DNh8QHe0VwcgYxiZZg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "clicked" ],
+        "@timestamp" : [ "2014-10-08T15:48:32.585Z" ]
+      },
+      "sort" : [ 1412783312585, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "riWpSxLCSg6aH2Jmbz0nAA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:48:50.053Z" ]
+      },
+      "sort" : [ 1412783330053, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "wli_azJQRJStUHuOI5iNQw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:49:17.955Z" ]
+      },
+      "sort" : [ 1412783357955, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "dDVibtYKTKKBNceIWx3ypw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:49:40.095Z" ]
+      },
+      "sort" : [ 1412783380095, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "UlyptcDHR6KjweeTraJNCg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:49:48.146Z" ]
+      },
+      "sort" : [ 1412783388146, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "pob1gYidToK6sZPNiRu6OA",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:49:50.164Z" ]
+      },
+      "sort" : [ 1412783390164, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "0G6_tFjhRUyWUncBfW9rjw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:49:56.412Z" ]
+      },
+      "sort" : [ 1412783396412, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "EqPQ1ZVoTZu2OtKZ71AnXg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:49:58.985Z" ]
+      },
+      "sort" : [ 1412783398985, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "b__UrCQDS8Oq9Wi_1M6JLg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:50:01.841Z" ]
+      },
+      "sort" : [ 1412783401841, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "RxgqPxZvRaKGoBmgTRKV4A",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:50:55.582Z" ]
+      },
+      "sort" : [ 1412783455582, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "c-O-0tJkQ3GnxlVTg8YrgQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:51:06.561Z" ]
+      },
+      "sort" : [ 1412783466561, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "cssT95cZQlqRB2F-DyQQ1g",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:51:13.368Z" ]
+      },
+      "sort" : [ 1412783473368, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "WbZAyCf1SCCtK_TeRWnE-Q",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:51:18.297Z" ]
+      },
+      "sort" : [ 1412783478297, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "PdSOfhitRQyLloHCu9HhhQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:51:44.714Z" ]
+      },
+      "sort" : [ 1412783504714, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "x_QK-_y3Qn67n-4EnuFsmg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:52:05.944Z" ]
+      },
+      "sort" : [ 1412783525944, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "aKEGdm3tR-G4FQ9c-1hXTQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:52:21.144Z" ]
+      },
+      "sort" : [ 1412783541144, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "tMVXmOYdQ1KuZDs0_VeSIQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:52:39.751Z" ]
+      },
+      "sort" : [ 1412783559751, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "BrVX_JuyTwGh8B-pMKVnQw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:53:31.051Z" ]
+      },
+      "sort" : [ 1412783611051, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "USWzIgf9QBazN4Bws6qwLQ",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:53:42.729Z" ]
+      },
+      "sort" : [ 1412783622729, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "4T5VX7J6Qt6ylM9_RmkO1w",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:54:34.577Z" ]
+      },
+      "sort" : [ 1412783674577, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "qfmTokJIR7mNMRD61tXE_g",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:55:31.251Z" ]
+      },
+      "sort" : [ 1412783731251, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "m086ndp1RBeHRKYR4ajSSg",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:55:37.740Z" ]
+      },
+      "sort" : [ 1412783737740, "543559f62a2d7" ]
+    }, {
+      "_index" : "user_log_v3",
+      "_type" : "logs",
+      "_id" : "rDdH5a-BT1qvJg9d0oVHLw",
+      "_score" : null,
+      "fields" : {
+        "message" : [ "activity_search" ],
+        "@timestamp" : [ "2014-10-08T15:56:32.477Z" ]
+      },
+      "sort" : [ 1412783792477, "543559f62a2d7" ]
+    } ]
+  }
+}
