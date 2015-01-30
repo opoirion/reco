@@ -38,7 +38,7 @@ size=10000
 pathdata='home/oliver/Documents/clustering/data/'
 mongodicname='all_act_v2'
 
-params={}
+params={'figname':'dist_small.png'}
 
 def main():
     #cl=take_data_BASE(size,fname='bleddata')
@@ -46,7 +46,7 @@ def main():
     #cl.process()
     #cl.save()
     
-    load_query_click_data_raw(size,index='user_log',request=request.request4,func=extract_func.extract_score_multipass,params=params)
+    load_query_click_data_raw(size,index='user_log',request=request.request5,func=extract_func.extract_score_multipass,params=params)
     #cl=take_data_BASE(daylist=['vendredi','samedi'],nbday=200)
     #cl.alter_request()
     #cl.alter_request_onlyclick()

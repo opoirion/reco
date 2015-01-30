@@ -55,7 +55,12 @@ def extract_score_multipass(res,**params):
            
             pylab.subplot(height,2,i)
             i+=1
-            pylab.hist(score['clicked'][field],50,color='r')
+            try:
+                pylab.hist(score['clicked'][field],50,color='r')
+            except Exception:
+                print 'err with:',field
+                pylab.text(0.5,0.5,'problem with {0}'.format(field))
+                
             meanclick=sp.mean(score['clicked'][field])
             stdclick=sp.std(score['clicked'][field])
             pylab.xlabel('{0} clicked mean:{1} std:{2} l:{3}'.format(field,round(meanclick,2),round(stdclick,2),len(score['clicked'][field])))
@@ -64,13 +69,17 @@ def extract_score_multipass(res,**params):
             i+=1
             meanappear=sp.mean(score['appear'][field])
             stdappear=sp.std(score['appear'][field])
-            pylab.hist(score['appear'][field],50,color='g')
+            try:
+                pylab.hist(score['appear'][field],50,color='g')
+            except Exception:
+                print 'err with:',field
+                pylab.text(0.5,0.5,'problem with {0}'.format(field))
             pylab.xlabel('{0} appear mean:{1} std:{2} l:{3}'.format(field,round(meanappear,2),round(stdappear,2),len(score['appear'][field])))
         print field
         print round(meanclick,4),round(meanappear,4)
         print round(stdclick,4),round(stdappear,4)
         print 'longeur: ',len(score['clicked'][field]),len(score['appear'][field])
-    pylab.savefig('../img/distrib_all_city.png')
+    pylab.savefig('../img/{0}'.format(params['figname']))
     
     return score
 

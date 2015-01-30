@@ -187,7 +187,7 @@ request4={
                   },
                   {
                      "terms": {
-                      "ctxt_search.addressTree": ["paris","lyon","marseille","toulouse","bordeaux","nantes","grenoble","strasbourg"]
+                      "ctxt_search.addressTree": ["paris","lyon","marseille","toulouse","bordeaux","nantes","grenoble","strasbourg","reims","montpellier","nice","toulon"]
                     } 
                   }
                 ]
@@ -241,7 +241,7 @@ request5={
                   },
                   {
                      "terms": {
-                      "ctxt_search.addressTree": ["montrond-les-bains","loire-42","saint-just-saint-rambert","pau","tournon-sur-rhone"," aquitaine","wittenheim","montelimar","la-roche-sur-foron"]
+                      "ctxt_search.addressTree": ["montrond-les-bains","loire-42","saint-just-saint-rambert","pau","tournon-sur-rhone"," aquitaine","wittenheim","montelimar","la-roche-sur-foron","bourg-en-bresse","aix-les-bains","annecy","fos-sur-mer","annemasse","bons-en-chablais","chambery"]
                     } 
                   }
                 ]
@@ -270,6 +270,78 @@ request_aggregation_CITY={
                   {
                      "terms": {
                         "ctxt_search.addressTree": ["paris","lyon","marseille","toulouse","bordeaux","nantes","grenoble","strasbourg"]
+                     }
+                  },
+                  {
+                     "term": {
+                        "user.seems_human": True
+                     }
+                  },
+                  {
+                     "terms": {
+                        "message": [
+                           "appear",
+                           "clicked"
+                        ]
+                     }
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "size": 0,
+   "aggs": {
+      "rubric": {
+         "terms": {
+            "field": "ctxt_rubric.id",
+            "size": 0
+         },
+         "aggs": {
+            "message": {
+               "terms": {
+                  "field": "message"
+               }
+            }
+         }
+      },
+      "categorie": {
+         "terms": {
+            "field": "ctxt_sem_tags.categorie.name",
+            "size": 0
+         },
+         "aggs": {
+            "message": {
+               "terms": {
+                  "field": "message"
+               }
+            }
+         }
+      },
+      "label": {
+         "terms": {
+            "field": "ctxt_sem_tags.label.name",
+            "size": 0
+         },
+         "aggs": {
+            "message": {
+               "terms": {
+                  "field": "message"
+               }
+            }
+         }
+      }
+   }
+}
+request_aggregation_SMALL={
+   "query": {
+      "filtered": {
+         "filter": {
+            "bool": {
+               "must": [
+                  {
+                     "terms": {
+                        "ctxt_search.addressTree": ["montrond-les-bains","loire-42","saint-just-saint-rambert","pau","tournon-sur-rhone"," aquitaine","wittenheim","montelimar","la-roche-sur-foron","bourg-en-bresse","aix-les-bains","annecy","fos-sur-mer","annemasse","bons-en-chablais","chambery"]
                      }
                   },
                   {
