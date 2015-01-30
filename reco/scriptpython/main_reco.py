@@ -42,7 +42,7 @@ params={'occurence':None,'image':None,'rubric-on':None,'lat_lng':None,'time-prox
 
 def main():
     cl=take_data_BASE(size,fname='bleddata')
-    #cl.change_request(request.request5)
+    cl.change_request(request.request5,field='_source')
     cl.process()
     cl.save()
     
@@ -85,7 +85,8 @@ class take_data_BASE():
         self.daylistint=[self.mapday[day] for day in self.daylist]
         self.request=request.request_BASE
 
-    def change_request(self,request):
+    def change_request(self,request,field='fields'):
+        self.field=field
         self.request=request
     def alter_request_onlyclick(self):
         self.request["filter"]["bool"]["must"][0]["terms"]["message"]=["clicked"]
@@ -123,6 +124,9 @@ class take_data_BASE():
     def process_rawlist(self):
         self.dic={}
         for r in self.raw_list:
+            
+            if type(r['message'])!=list:r['message']=[r['message']]
+            if type(r['ctxt_rubric.id'])!=list:r['ctxt_rubric.id']=[r['ctxt_rubric.id']]
             self.dic.setdefault(r["message"][0],{})
             self.dic[r["message"][0]].setdefault(r["ctxt_rubric.id"][0],0)
             self.dic[r["message"][0]][r["ctxt_rubric.id"][0]]+=1
@@ -139,15 +143,16 @@ class take_data_BASE():
         lenres=len(res)
         for r in res:
             i+=1
-            raw_input(r.keys())
-            d1=datetime.datetime(*map(lambda x:int(x.split('.')[0]),r['fields']['@timestamp'][0].split('T',1)[0].split('-')+r['fields']['@timestamp'][0].split('T',1)[1].strip('Z').split(':')))
+            if type(r[self.field]['@timestamp'])!=list:r[self.field]['@timestamp']=[r[self.field]['@timestamp']]
+            #raw_input(r[self.field]['@timestamp'])
+            d1=datetime.datetime(*map(lambda x:int(x.split('.')[0]),r[self.field]['@timestamp'][0].split('T',1)[0].split('-')+r[self.field]['@timestamp'][0].split('T',1)[1].strip('Z').split(':')))
             if not started:
                 firstdate=d1
                 started=True
-            if "ctxt_rubric.id" not in r['fields']:continue
+            if "ctxt_rubric.id" not in r[self.field]:continue
             
             if (d1.weekday() in self.daylistint) and (not self.uptime or self.uptime<d1.time()):
-                raw_list.append(copy.deepcopy(r['fields']))
+                raw_list.append(copy.deepcopy(r[self.field]))
             sys.stdout.write('\r {0} request done ({1} %)'.format(i,round(float(i)/lenres*100.0,2)))
             sys.stdout.flush()
         lastdate=d1

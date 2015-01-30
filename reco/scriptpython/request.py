@@ -264,4 +264,77 @@ request5={
       }
     }
   }
-}   
+}  
+                
+request_aggregation_CITY={
+   "query": {
+      "filtered": {
+         "filter": {
+            "bool": {
+               "must": [
+                  {
+                     "terms": {
+                        "ctxt_search.addressTree": ["paris","lyon","marseille","toulouse","bordeaux","nantes","grenoble","strasbourg"]
+                     }
+                  },
+                  {
+                     "term": {
+                        "user.seems_human": True
+                     }
+                  },
+                  {
+                     "terms": {
+                        "message": [
+                           "appear",
+                           "clicked"
+                        ]
+                     }
+                  }
+               ]
+            }
+         }
+      }
+   },
+   "size": 0,
+   "aggs": {
+      "rubric": {
+         "terms": {
+            "field": "ctxt_rubric.id",
+            "size": 0
+         },
+         "aggs": {
+            "message": {
+               "terms": {
+                  "field": "message"
+               }
+            }
+         }
+      },
+      "categorie": {
+         "terms": {
+            "field": "ctxt_sem_tags.categorie.name",
+            "size": 0
+         },
+         "aggs": {
+            "message": {
+               "terms": {
+                  "field": "message"
+               }
+            }
+         }
+      },
+      "label": {
+         "terms": {
+            "field": "ctxt_sem_tags.label.name",
+            "size": 0
+         },
+         "aggs": {
+            "message": {
+               "terms": {
+                  "field": "message"
+               }
+            }
+         }
+      }
+   }
+}
