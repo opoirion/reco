@@ -186,11 +186,6 @@ request4={
                     }
                   },
                   {
-                    "term": {
-                      "ctxt_function_explanation.field_or_function": "lat_lng"
-                    }
-                  },
-                  {
                      "terms": {
                       "ctxt_search.addressTree": ["paris","lyon","marseille","toulouse","bordeaux","nantes","grenoble","strasbourg"]
                     } 

@@ -16,6 +16,8 @@ import cPickle
 import sys
 import request
 import extract_func
+import json
+import unidecode
 
 
 ###################### Databases  #######################
@@ -25,22 +27,44 @@ es=Elasticsearch(['http://chewbacca.mapado.com:9200/'])
 
 
 ###################### Parameter  #######################
-size=1000
+size=10000
 #########################################################
 
 
 def main():
-        res=es.index(index='reco_models',doc_type="models",body={"python_test":"success",'idd':4})
-        print res
-        return
+        with open('../data/city_v1.json','r') as f:
+            jsonstring=unidecode.unidecode(f.read().strip().strip('\n').lower().decode('utf-8'))
+        city=json.loads(jsonstring)
+        querydic ={ 
+            'factor' :{
+                'lat_lng':  3,
+                'time-proximity' : 4,
+                'rubric-on' : 1.0,
+                'tags-on.label' : 0.5,
+                'tags-on.categorie' : 1.0
+            },
+            'normfactor' : {
+                'lat_lng':  {'mean' : 0.0, 'std' : 1},
+                'time-proximity' : {'mean' : 0, 'std' : 1},
+                'rubric-on' : {'mean' : 0.0, 'std' : 0.2},
+                'tags-on.label' : {'mean' : 0.0, 'std' : 0.2},
+                'tags-on.categorie' : {'mean' : 0.0, 'std' : 0.2}
+            },
+            'city' : city,
+            'version' : 1,
+            'name' : 'all big city'
+        }
+        #return
         req=request.request_aggregation_CITY
         res=es.search(index='user_log',body=req,size=size)
         RubricVector=process_agg_res_ratio(res,'rubric')
         SemCatVector=process_agg_res_ratio(res,'categorie',100)
         SemLabelVector=process_agg_res_ratio(res,'label',100)
         
-        
-        print SemLabelVector
+        #print RubricVector
+        querydic['vector']={'rubric':RubricVector}
+        es.index(index='reco_models',doc_type='models',body=querydic)
+        #print SemCatVector
 
         
 def process_agg_res_ratio(res,field='rubric',threshold=None):

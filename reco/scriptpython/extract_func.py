@@ -32,34 +32,34 @@ def extract_score(res,**params):
 
 
 def extract_score_multipass(res,**params):
-    score={'clicked':{param:[] for param in params},'appear':{param:[] for param in params}}
+    score={'clicked':{},'appear':{}}
+
     
         
     for r in res['hits']['hits']:
         
         message=r['_source']['message']
         r=r['_source']['ctxt_function_explanation']
-        
-        for param in params:
-            try:
-                score[message][param].append(filter(lambda x:x['field_or_function']==param,r)[0]['score'])
-            except Exception as e:
-                print '============>',e
-                print r
-                print param
-                #raw_input()
-    height=len(score['clicked'])
-    pylab.figure(figsize=(14,18))
+       
+        for bucket in r:
+                key=bucket['field_or_function']
+                if not score[message].has_key(key):score[message][key]=[]
+                score[message][key].append(bucket['score'])
+                
+                
+    height=max([len(score['clicked']),len(score['appear'])])
+    pylab.figure(figsize=(14,30))
     i=1
-    for field in params:
-        if score['clicked'][field]:
+    for field in set(score['clicked'].keys()+score['appear'].keys()):
+        if score['clicked'].has_key(field):
+           
             pylab.subplot(height,2,i)
             i+=1
             pylab.hist(score['clicked'][field],50,color='r')
             meanclick=sp.mean(score['clicked'][field])
             stdclick=sp.std(score['clicked'][field])
             pylab.xlabel('{0} clicked mean:{1} std:{2} l:{3}'.format(field,round(meanclick,2),round(stdclick,2),len(score['clicked'][field])))
-        if score['appear'][field]:
+        if score['appear'].has_key(field):
             pylab.subplot(height,2,i)
             i+=1
             meanappear=sp.mean(score['appear'][field])
@@ -67,10 +67,10 @@ def extract_score_multipass(res,**params):
             pylab.hist(score['appear'][field],50,color='g')
             pylab.xlabel('{0} appear mean:{1} std:{2} l:{3}'.format(field,round(meanappear,2),round(stdappear,2),len(score['appear'][field])))
         print field
-        print round(meanclick,2),round(meanappear,2)
-        print round(stdclick,2),round(stdappear,2)
+        print round(meanclick,4),round(meanappear,4)
+        print round(stdclick,4),round(stdappear,4)
         print 'longeur: ',len(score['clicked'][field]),len(score['appear'][field])
-    pylab.savefig('../img/distrib_all_bled.png')
+    pylab.savefig('../img/distrib_all_city.png')
     
     return score
 

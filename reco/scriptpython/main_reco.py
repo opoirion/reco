@@ -32,21 +32,21 @@ es=Elasticsearch(['http://chewbacca.mapado.com:9200/'])
 pathdata='/home/oliver/Documents/reco/data/'
 
 ###################### Parameter  #######################
-size=1000
+size=10000
 #########################################################
 
 pathdata='home/oliver/Documents/clustering/data/'
 mongodicname='all_act_v2'
 
-params={'occurence':None,'image':None,'rubric-on':None,'lat_lng':None,'time-proximity':None}
+params={}
 
 def main():
-    cl=take_data_BASE(size,fname='bleddata')
-    cl.change_request(request.request5,field='_source')
-    cl.process()
-    cl.save()
+    #cl=take_data_BASE(size,fname='bleddata')
+    #cl.change_request(request.request5,field='_source')
+    #cl.process()
+    #cl.save()
     
-    #load_query_click_data_raw(size,index='user_log',request=request.request5,func=extract_func.extract_score_multipass,params=params)
+    load_query_click_data_raw(size,index='user_log',request=request.request4,func=extract_func.extract_score_multipass,params=params)
     #cl=take_data_BASE(daylist=['vendredi','samedi'],nbday=200)
     #cl.alter_request()
     #cl.alter_request_onlyclick()
