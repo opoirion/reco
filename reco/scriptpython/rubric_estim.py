@@ -17,15 +17,15 @@ rdic[0]={'slug':'void'}
 
 def main():
 	
-	#analdic=load_rdic('vensam_d100_v2')
-	#click=analdic['clicked']
-	#appear=analdic['appear']
+	analdic=load_rdic('vensam_d100_v2')
+	click=analdic['clicked']
+	appear=analdic['appear']
 	
-	#analdic2=load_rdic('dimlun_d100_v2')
+	analdic2=load_rdic('dimlun_d100_v2')
 	#click2=analdic2['clicked']
 	#appear2=analdic2['appear']
 	
-	analdic=load_rdic('testtimeint')
+	#analdic=load_rdic('testtimeint')
 	print analdic.keys()
 	analdic['inner']=filter(lambda x:x!=None and 0<x <10000,analdic['inner'])
 	analdic['outer']=filter(lambda x:x!=None and 0<x <10000,analdic['outer'])

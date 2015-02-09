@@ -17,8 +17,7 @@ request_BASE={
                     ]
                 }
             }
-            }
-
+}
 request={
         "query": {
 
@@ -333,6 +332,7 @@ request_aggregation_CITY={
       }
    }
 }
+
 request_aggregation_SMALL={
    "query": {
       "filtered": {
@@ -405,3 +405,5 @@ request_aggregation_SMALL={
       }
    }
 }
+               
+               

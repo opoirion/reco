@@ -19,6 +19,7 @@ import extract_func
 import json
 import unidecode
 import models
+import request_tools
 
 
 ###################### Databases  #######################
@@ -43,24 +44,40 @@ private $latLngFactor = 2;
 #########################################################
 
 
+###################### Model ############################
+model = models.querydic_proximity_we
+#model = models.querydic_basic
+#req=request.request_aggregation_CITY
+req=request.request_aggregation_SMALL
+#########################################################
+
+###################### Model suppl ######################
+request_tools.alter_request(req, daylist = model['days'] ,nbday=100,time=model['time'])
+with open('../data/city_v1.json','r') as f:
+        jsonstring=unidecode.unidecode(f.read() 
+                .strip()
+                .strip('\n')
+                .lower()
+                .decode('utf-8'))
+        city=json.loads(jsonstring)
+#model['city']=city
+for instant in model['time']:
+    h,m=map(lambda x:int(x), model['time'][instant].split(':'))
+    model['time'][instant]=60 *(m+h*60)
+#########################################################
+
 
 def main():
-        with open('../data/city_v1.json','r') as f:
-            jsonstring=unidecode.unidecode(f.read().strip().strip('\n').lower().decode('utf-8'))
-        city=json.loads(jsonstring)
-        querydic =models.querydic_basic
-        #querydic['city']=city
-        #return
-        req=request.request_aggregation_CITY
-        
+        #print json.dumps(req)
         res=es.search(index='user_log',body=req,size=size)
         RubricVector=process_agg_res_ratio(res,'rubric')
         SemCatVector=process_agg_res_ratio(res,'categorie',100)
         SemLabelVector=process_agg_res_ratio(res,'label',100)
         
         #print RubricVector
-        querydic['vector']={'rubric':RubricVector}
-        es.index(index='reco_models',doc_type='models',body=querydic)
+        model['vector']={'rubric':RubricVector}
+        
+        es.index(index='reco_models',doc_type='models',body=model)
         #print SemCatVector
 
         
